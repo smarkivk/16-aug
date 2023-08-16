@@ -1,0 +1,32 @@
+package com.advanced.filehandling;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class PrintWriterApp {
+
+    public static void main(String[] args) {
+        String JULIUS_CESAR_FILE_PATH = "src/com/advanced/filehandling/JuliusCesar.txt";
+
+        try (PrintWriter bookWriter = new PrintWriter(new FileWriter(JULIUS_CESAR_FILE_PATH, true))) {
+            bookWriter.println("Even you, Brutus?");
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+
+
+    }
+}
+
+Error 
+"C:\Program Files\Eclipse Adoptium\jdk-17.0.3.7-hotspot\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2022.2.2\lib\idea_rt.jar=50661:C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2022.2.2\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\vithapa\IdeaProjects\practice\out\production\practice filehandling.PrintWriterApp
+java.io.FileNotFoundException: src\com\advanced\filehandling\JuliusCesar.txt (The system cannot find the path specified)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:293)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:235)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:155)
+	at java.base/java.io.FileWriter.<init>(FileWriter.java:82)
+	at filehandling.PrintWriterApp.main(PrintWriterApp.java:14)
+
+Process finished with exit code 0
